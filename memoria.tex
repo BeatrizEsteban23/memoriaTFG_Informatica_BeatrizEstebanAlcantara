@@ -3,17 +3,17 @@
 %%
 %% Por Gregorio Robles <grex arroba gsyc.urjc.es>
 %%     Grupo de Sistemas y Comunicaciones
-%%     Escuela TÈcnica Superior de Ingenieros de TelecomunicaciÛn
+%%     Escuela T√©cnica Superior de Ingenieros de Telecomunicaci√≥n
 %%     Universidad Rey Juan Carlos
 %% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
 %%  etc. Muchas gracias a todos)
 %%
-%% La ˙ltima versiÛn de esta plantilla est· siempre disponible en:
+%% La √∫ltima versi√≥n de esta plantilla est√° siempre disponible en:
 %%     https://github.com/gregoriorobles/plantilla-memoria
 %%
 %% Para obtener PDF, ejecuta en la shell:
 %%   make
-%% (las im·genes deben ir en PNG o JPG)
+%% (las im√°genes deben ir en PNG o JPG)
 
 %% Adaptado para la ETSII por Marcos Tenrero <tenrero@aol.com>
 
@@ -24,14 +24,16 @@
 
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{times}
-\usepackage[latin1]{inputenc}
-\usepackage[spanish]{babel} % Comenta esta lÌnea si tu memoria es en inglÈs
-\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
 \usepackage{float}  %% H para posicionar figuras
-\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de Ìndice
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de √≠ndice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{float}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -40,8 +42,8 @@
 
 \begin{document}
 
-\renewcommand{\refname}{BibliografÌa}  %% Renombrando
-\renewcommand{\appendixname}{ApÈndice}
+\renewcommand{\refname}{Bibliograf√≠a}  %% Renombrando
+\renewcommand{\appendixname}{Ap√©ndice}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PORTADA
@@ -63,21 +65,21 @@
 \vspace{3cm}
 
 \Large
-TITULACI”N EN MAY⁄SCULAS
+TITULACI√ìN EN MAY√öSCULAS
 
 \vspace{0.4cm}
 
 \large
-Curso AcadÈmico 20XX/20XX
+Curso Acad√©mico 20XX/20XX
 
 \vspace{0.8cm}
 
-Trabajo Fin de Grado/M·ster
+Trabajo Fin de Grado/M√°ster
 
 \vspace{2.5cm}
 
 \LARGE
-TÕTULO DEL TRABAJO EN MAY⁄SCULAS
+T√çTULO DEL TRABAJO EN MAY√öSCULAS
 
 \vspace{4cm}
 
@@ -89,7 +91,7 @@ Tutor : Nombre del Tutor del TFG
 
 \newpage
 \mbox{}
-\thispagestyle{empty} % para que no se numere esta pagina
+\thispagestyle{empty} % para que no se numere esta p√°gina
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,11 +103,11 @@ Tutor : Nombre del Tutor del TFG
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/M·ster}
+\textbf{Trabajo Fin de Grado/M√°ster}
 
 \vspace{1cm}
 \large
-TÌtulo del Trabajo con Letras Capitales para Sustantivos y Adjetivos
+T√≠tulo del Trabajo con Letras Capitales para Sustantivos y Adjetivos
 
 \vspace{1cm}
 \large
@@ -115,7 +117,7 @@ TÌtulo del Trabajo con Letras Capitales para Sustantivos y Adjetivos
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizÛ el dÌa \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realiz√≥ el d√≠a \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -129,10 +131,10 @@ La defensa del presente Proyecto Fin de Carrera se realizÛ el dÌa \qquad$\;\,$ d
 
 
 \vspace{1.2cm}
-y habiendo obtenido la siguiente calificaciÛn:
+y habiendo obtenido la siguiente calificaci√≥n:
 
 \vspace{1cm}
-\textbf{CalificaciÛn:}
+\textbf{Calificaci√≥n:}
 
 
 \vspace{1cm}
@@ -144,7 +146,7 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
 %%%% Dedicatoria
 
 \chapter*{}
-\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+\pagenumbering{Roman} % para comenzar la numeraci√≥n de p√°ginas en n√∫meros romanos
 \begin{flushright}
 \textit{Dedicado a \\
 mi familia / mi abuelo / mi abuela}
@@ -154,11 +156,11 @@ mi familia / mi abuelo / mi abuela}
 %%%% Agradecimientos
 
 \chapter*{Agradecimientos}
-%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el Ìndice
-\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
+%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el √≠ndice
+\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado
 
-AquÌ vienen los agradecimientos\ldots Aunque est· bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutar· tanto de tus logros como t˙\ldots 
-Adem·s, la pareja quiz·s no sea para siempre, pero tu madre sÌ.
+Aqu√≠ vienen los agradecimientos\ldots Aunque est√© bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutar√° tanto de tus logros como t√∫\ldots
+Adem√°s, la pareja quiz√°s no sea para siempre, pero tu madre s√≠.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -167,93 +169,66 @@ Adem·s, la pareja quiz·s no sea para siempre, pero tu madre sÌ.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ÕNDICES %
+% √çNDICES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Las buenas noticias es que los Ìndices se generan autom·ticamente.
-% Lo ˙nico que tienes que hacer es elegir cu·les quieren que se generen,
-% y comentar/descomentar esa instrucciÛn de LaTeX.
-
-%%%% Õndice de contenidos
-\tableofcontents 
-%%%% Õndice de figuras
+%%%% √çndice de contenidos
+\tableofcontents
+%%%% √çndice de figuras
 \cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
-\listoffigures % indice de figuras
-%%%% Õndice de tablas
+%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el √≠ndice de contenidos
+\listoffigures
+%%%% √çndice de tablas
 %\cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-%\listoftables % indice de tablas
-
+%\addcontentsline{toc}{chapter}{Lista de tablas}
+%\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCCI”N Y MOTIVACI”N %
+% INTRODUCCI√ìN Y MOTIVACI√ìN %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{introduccion-motivacion}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OBJETIVOS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{objetivos}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TECNOLOGÕAS, HERRAMIENTAS Y METODOLOGÕAS %
+% TECNOLOG√çAS, HERRAMIENTAS Y METODOLOG√çAS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{tecnologias}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DESCRIPCI”N INFORM¡TICA %
+% DESCRIPCI√ìN INFORM√ÅTICA %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{descripcion-informatica}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONCLUSIONES Y TRABAJOS FUTUROS%
+% CONCLUSIONES Y TRABAJOS FUTUROS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{conclusiones-trabajos-futuros}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BIBLIOGRAFIA %
+% BIBLIOGRAF√çA %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
 
-% Las siguientes dos instrucciones es todo lo que necesitas
-% para incluir las citas en la memoria
 \bibliographystyle{abbrv}
-\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
-% las referencias bibliogr·ficas. Abre ese fichero y mira el formato que tiene,
-% que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
-% formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
-% y ver·s que lo puedes hacer de manera sencilla.
-% M·s informaciÛn: 
-% http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
-
+\bibliography{memoria}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AP…NDICE(S) %
+% AP√âNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
 \appendix
 \chapter{Manual de usuario}
 \label{app:manual}
-
 
 \end{document}
