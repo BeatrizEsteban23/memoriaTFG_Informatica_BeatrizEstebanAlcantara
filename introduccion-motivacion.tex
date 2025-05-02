@@ -3,13 +3,15 @@
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-Contexto en el que se enmarca el proyecto y la justificación del mismo. Este capítulo es muy importante porque permite al lector conocer qué sentido tiene el proyecto, qué ofrece, por qué es relevante su implementación, los objetivos que persigue, etc. Este capítulo debería tener una extensión de entre 4 y 8 páginas.
+% Contexto en el que se enmarca el proyecto y la justificación del mismo. Este capítulo es muy importante porque permite al lector conocer qué sentido tiene el proyecto, qué ofrece, por qué es relevante su implementación, los objetivos que persigue, etc. Este capítulo debería tener una extensión de entre 4 y 8 páginas.
 
 \section{Mercado actual de las aplicaciones móviles}
 
-Las aplicaciones móviles han transformado por completo nuestra vida cotidiana. En la actualidad están presentes en nuestra vida diaria y tienen un gran impacto en cómo nos comunicamos, cómo trabajamos, cómo nos divertimos y cómo realizamos nuestras tareas como la compra.
+Las aplicaciones móviles han transformado por completo nuestro día  a día y tienen un gran impacto en cómo nos comunicamos, cómo trabajamos, cómo nos divertimos y cómo realizamos nuestras tareas.
 
-Según los datos de 42matters, compañía que se encarga de recopilar y ofrecer datos a diferentes empresas, el 27 de enero de 2024 hay 2 millones aplicaciones Android en Google Play y algo más de 1.900.000 aplicaciones iOS en App Store, figura~\ref{fig:apps_free_vs_pay}. De las cuales, el porcentaje de aplicaciones que los usuarios se pueden descargar de manera gratuita es aproximadamente de 95\% en ambas tiendas de aplicaciones.
+Entre esas tareas se encuentra realizar la compra del hogar, tarea que requiere de organización si el usuario quiere realizarla de manera óptima. Este trabajo de fin de grado se enfoca en generar una herramienta que sirva de ayuda para que los usuarios la lleven a cabo.
+
+Según los datos de 42matters, compañía que se encarga de recopilar y ofrecer datos a diferentes empresas, a 27 de enero de 2024 hay 2 millones aplicaciones Android en Google Play y algo más de 1.900.000 aplicaciones iOS en App Store, figura~\ref{fig:apps_free_vs_pay}. De las cuales, el porcentaje de aplicaciones que los usuarios se pueden descargar de manera gratuita es aproximadamente de 95\% en ambas tiendas de aplicaciones.
 
 \begin{figure}[H]
 \centering
@@ -46,18 +48,18 @@ Además, se lanzan diariamente más de 2.300 nuevas aplicaciones en Google Play 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/intro/apps_per_month.png}
+\includegraphics[width=0.6\textwidth]{./img/intro/apps_per_month.png}
 \caption{Nuevas aplicaciones por mes en cada tienda de aplicaciones (27/01/2024)}
 \label{fig:apps_per_month}
 \vspace{0.2em}
 {\footnotesize \centering \textit{Fuente:} \url{https://42matters.com/stats#apps-by-category} \par}
 \end{figure}
 
-En cuanto a los usuarios, como se puede ver en la figura~\ref{fig:world_map_ios_android}, Android domina el panorama global. Según Statista (junio de 2024), su cuota de mercado alcanza el 72,15\%, frente al 27,19\% de iOS. Aunque en países como Estados Unidos e Irlanda iOS tiene más presencia, en regiones como América Latina, África, Asia y, especialmente, España, Android es el sistema operativo predominante.
+En cuanto a los usuarios, como se puede ver en la figura~\ref{fig:world_map_ios_android}, Android domina el panorama global. Según Statista (junio de 2024), su cuota de mercado alcanza el 72,15\%, frente al 27,19\% de iOS. Aunque en países como Estados Unidos e Irlanda iOS tiene más presencia, Android es el sistema operativo predominante en regiones como América Latina, África, Asia y, especialmente, España.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/intro/world_map_ios_android.jpeg}
+\includegraphics[width=0.6\textwidth]{./img/intro/world_map_ios_android.jpeg}
 \caption{Mapa mundial de Android e iOS (27/01/2024)}
 \label{fig:world_map_ios_android}
 \vspace{0.2em}
@@ -76,24 +78,26 @@ Las aplicaciones web, por el contrario, son páginas web optimizadas para dispos
 
 Las aplicaciones híbridas combinan elementos de ambas. Básicamente, se trata de aplicaciones web que se ejecutan dentro de un contenedor nativo, lo que permite distribuirlas desde tiendas oficiales y acceder a algunas funcionalidades del hardware. No obstante, la integración entre la parte web y la parte nativa puede generar complejidades, sobre todo en términos de rendimiento y mantenimiento.
 
-Tras analizar las características de cada enfoque, se optó por desarrollar una aplicación nativa para Android. Esta decisión responde tanto al interés por aprender en profundidad el desarrollo específico para esta plataforma, como al deseo de ofrecer una experiencia más fluida, potente y adaptada a los dispositivos que predominan en el mercado español.
+Tras analizar las características de cada enfoque, para este trabajo de fin de grado se optó por desarrollar una aplicación nativa para Android. Esta decisión responde tanto al interés por aprender en profundidad el desarrollo específico para esta plataforma, como al deseo de ofrecer una experiencia más fluida, potente y adaptada a los dispositivos que predominan en el mercado español.
 
 \section{Análisis del entorno}
 
-Antes de iniciar el desarrollo de la aplicación, se llevó a cabo un análisis del entorno para identificar qué soluciones digitales existen actualmente orientadas a la organización de la compra doméstica. Esta revisión permitió detectar tanto buenas prácticas como carencias que justifican el presente proyecto.
+Antes de iniciar el desarrollo de la aplicación, se llevó a cabo un análisis del entorno para identificar qué soluciones digitales existen actualmente orientadas a la organización de la compra doméstica. Esta revisión permitió detectar tanto buenas prácticas como carencias que justifican este proyecto.
 
-Una de las aplicaciones más conocidas en este ámbito es \textit{Bring!}. Su funcionamiento se basa en la creación de listas de la compra mediante una interfaz visual con iconos organizados por categorías (por ejemplo, frutas, lácteos, panadería). Es intuitiva y estética, lo que la hace accesible para usuarios de cualquier perfil. Sin embargo, no permite especificar cantidades con precisión, no admite comentarios o notas personalizadas para cada producto, ni se integra con recetas o planificación semanal, lo que limita su utilidad para quienes desean gestionar la compra de forma más detallada.
+Una de las aplicaciones más conocidas en este ámbito es \textit{Bring!}. Su funcionamiento se basa en la creación de listas de la compra mediante una interfaz visual con iconos organizados por categorías (por ejemplo, frutas, lácteos, panadería). Está orientada a usuarios de cualquier perfil. Sin embargo, no permite especificar cantidades con precisión, no admite comentarios o notas personalizadas para cada producto, ni se integra con recetas o planificación semanal, lo que limita su utilidad para quienes desean gestionar la compra de forma más detallada.
 
-Otra opción popular es \textit{Listonic}, que apuesta por un diseño más clásico: listas de verificación con productos agrupados por secciones del supermercado. Es rápida y práctica, y ofrece sugerencias inteligentes basadas en el texto introducido por el usuario. No obstante, su interfaz resulta más básica y no incorpora funcionalidades como la planificación de menús, el control del consumo habitual o la personalización de listas según hábitos domésticos.
+Otra opción popular es \textit{Listonic}, que apuesta por un diseño más clásico: listas de verificación con productos agrupados por secciones del supermercado. Es rápida y práctica, y ofrece sugerencias inteligentes basadas en el texto introducido por el usuario. No obstante, su interfaz resulta más básica y no incorpora funcionalidades como la planificación de menús, el control del consumo habitual o la personalización de listas según hábitos domésticos o eventos.
 
 Ambas aplicaciones ofrecen soluciones útiles para el usuario promedio, pero presentan limitaciones cuando se busca una herramienta más flexible y adaptada a la realidad diaria de una persona o familia que necesita controlar mejor lo que compra, cuándo lo compra y por qué. Esta falta de personalización y de conexión con hábitos reales de consumo doméstico justifica el desarrollo de una alternativa más completa y adaptable.
 
+A partir de este momento, la aplicación que se desarrolla a lo largo de este proyecto la llamaremos Pinche.
+
 A diferencia de otras soluciones del mercado, Pinche aborda el problema de la organización de la compra doméstica desde una perspectiva práctica, personalizada y centrada en la realidad cotidiana de quienes gestionan los menús y las compras del hogar.
 
-La aplicación se estructura en tres secciones funcionales: listas de la compra, recetas e invitados. En la sección de listas, el usuario puede crear múltiples listas adaptadas a distintas ocasiones —por ejemplo, “Lista semanal” o “Cumpleaños de María”— y añadir productos con su cantidad, e incluso el supermercado donde se prefiere comprarlos. En la sección de recetas, se pueden almacenar platos con su elaboración detallada e ingredientes para un número determinado de comensales, además de añadir fácilmente esos ingredientes a cualquier lista activa. Por último, en la sección de invitados, se puede registrar información personalizada sobre las personas que suelen comer en casa, como sus intolerancias, preferencias y qué platos se les han preparado recientemente.
+La aplicación se estructura en tres secciones: listas de la compra, recetas e invitados. En la sección de listas, el usuario puede crear múltiples listas adaptadas a distintas ocasiones —por ejemplo, “Lista semanal” o “Cumpleaños de María”— y añadir productos con su cantidad, e incluso el supermercado donde se prefiere comprarlos. En la sección de recetas, se pueden almacenar platos con su elaboración detallada e ingredientes para un número determinado de comensales, además de añadir fácilmente esos ingredientes a cualquier lista activa si desea realizar la receta. Por último, en la sección de invitados, se puede registrar información personalizada sobre las personas que suelen comer en casa, como sus intolerancias, preferencias y qué platos se les han preparado recientemente.
 
-Esta estructura modular convierte a Pinche no solo en una herramienta para digitalizar listas de la compra, sino en una solución doméstica integral que facilita la planificación, optimiza el tiempo y mejora la experiencia culinaria y organizativa en el hogar. Al permitir registrar hábitos, preferencias e información nutricional, contribuye también a evitar errores comunes como compras duplicadas, olvidos o preparación de menús inadecuados para los invitados.
+Esta estructura modular convierte a Pinche no solo en una herramienta para digitalizar listas de la compra, sino en una solución doméstica integral que facilita la planificación, optimiza el tiempo y contribuye también a evitar errores comunes como compras duplicadas, olvidos o preparación de menús inadecuados para los invitados.
 
 Desde el punto de vista académico, el proyecto ofrece un caso completo para aplicar competencias clave del grado: desarrollo de interfaces modernas con Jetpack Compose, gestión de datos con Firebase, diseño orientado al usuario y trabajo bajo metodologías ágiles.
 
-En definitiva, Pinche es un proyecto que trasciende el ejercicio académico. Es una propuesta aplicable y escalable, que puede mejorar la calidad de vida de los usuarios al resolver un problema doméstico frecuente mediante una herramienta accesible, inteligente y bien estructurada.
+En definitiva, Pinche es una propuesta aplicable y escalable, que puede mejorar la calidad de vida de los usuarios al resolver un problema doméstico frecuente mediante una herramienta accesible, inteligente y bien estructurada.
