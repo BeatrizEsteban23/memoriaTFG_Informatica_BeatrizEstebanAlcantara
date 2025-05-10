@@ -103,7 +103,7 @@ La épica \textit{Invitados}, agrupa un total de ocho historias de usuario con s
 
 Una vez refinadas y estimadas, se ha preparado el primer Sprint de dos semanas de duraci\'on. Se ha fijado un l\'imite de 13 puntos de historia por Sprint. En este primer ciclo, se priorizaron historias de cada \'epica para implementar las funcionalidades b\'asicas. Sin embargo, solo se completaron 6 de las 8 historias planificadas debido a la carga de requisitos no funcionales que se requeria implementar en este primer Sprint.
 
-El seguimiento del Sprint se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint.
+El seguimiento del Sprint se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La Figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la Figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint.
 
 \begin{figure}[H]
 \centering
@@ -145,7 +145,7 @@ La arquitectura de una aplicación móvil resulta crítica para garantizar su es
 
 \subsection{Principios generales}
 
-Esta arquitectura promueve los principios de separación de responsabilidades, flujo unidireccional de datos, modularidad y testabilidad \cite{android-architecture}. El modelo propuesto divide la lógica de la aplicación en tres capas principales: UI, dominio (opcional) y datos, figura~\ref{fig:mvvm}. En nuestro caso vamos a utilizar la arquitectura recomendada incluyendo la capa opcional de dominio.
+Esta arquitectura promueve los principios de separación de responsabilidades, flujo unidireccional de datos, modularidad y testabilidad \cite{android-architecture}. El modelo propuesto divide la lógica de la aplicación en tres capas principales: UI, dominio (opcional) y datos, Figura~\ref{fig:mvvm}. En nuestro caso vamos a utilizar la arquitectura recomendada incluyendo la capa opcional de dominio.
 
 \begin{figure}[H]
 \centering
@@ -277,6 +277,49 @@ El aseguramiento de la calidad en el desarrollo de la aplicación \textbf{Pinche
 Las pruebas unitarias validan pequeñas unidades de código de forma aislada, principalmente funciones puras o clases sin dependencias externas. Para ello se ha utilizado \textbf{JUnit4} como framework base, complementado con \textbf{MockK} para simular comportamientos de dependencias externas como repositorios o servicios \cite{android-testing}.
 
 MockK se ha elegido frente a otras alternativas como Mockito debido a su compatibilidad nativa con Kotlin, su soporte para coroutines y su sintaxis más idiomática.
+
+el Listado~\ref{lst:signinTest},
+
+\begin{lstlisting}[language=Java, caption={SignInUserUseCaseTest}, label={lst:signinTest}]
+  @ExperimentalCoroutinesApi
+  class SignInUserUseCaseTest {
+
+    @get:Rule
+    val coroutinesTestRule = MainDispatcherRule()
+
+    private val authRepository: AuthRepository = mockk()
+    private lateinit var signInUserUseCase: SignInUserUseCase
+
+    private val email = "test@example.com"
+    private val password = "123456"
+
+    @Before
+    fun setup() {
+        signInUserUseCase = SignInUserUseCase(authRepository)
+    }
+
+    @Test
+    fun `sign in returns Success when repository succeeds`() = runTest {
+        coEvery { authRepository.firebaseSignInWithEmailAndPassword(email, password) } returns Success(true)
+
+        val result = signInUserUseCase(email, password)
+
+        assertTrue(result is Success)
+        coVerify { authRepository.firebaseSignInWithEmailAndPassword(email, password) }
+    }
+
+    @Test
+    fun `sign in returns Failure when repository fails`() = runTest {
+        val exception = Exception("Auth error")
+        coEvery { authRepository.firebaseSignInWithEmailAndPassword(email, password) } returns Failure(exception)
+
+        val result = signInUserUseCase(email, password)
+
+        assertTrue(result is Failure)
+        coVerify { authRepository.firebaseSignInWithEmailAndPassword(email, password) }
+    }
+}
+\end{lstlisting}
 
 \subsection{Pruebas de interfaz (UI)}
 
