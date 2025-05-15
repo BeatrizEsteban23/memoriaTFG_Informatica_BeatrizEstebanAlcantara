@@ -28,8 +28,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage{hyperref}
-%\usepackage[dvipdfm]{graphicx}
+\usepackage{caption}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind}
 \usepackage{latexsym}
@@ -123,7 +124,7 @@ Tutor : Manuel Rubio Sanchéz
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/Máster}
+\textbf{Trabajo Fin de Grado}
 
 \vspace{1cm}
 \large
@@ -169,7 +170,7 @@ Mostolés, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
 \pagenumbering{Roman} % para comenzar la numeración de páginas en números romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia, mis amigos y mi pareja}
+mi familia, mi pareja y amigos}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,9 +179,11 @@ mi familia, mis amigos y mi pareja}
 \chapter*{Agradecimientos}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado
+...
+% Aquí vienen los agradecimientos\ldots Aunque esté bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots
+% Además, la pareja quizás no sea para siempre, pero tu madre sí.
 
-Aquí vienen los agradecimientos\ldots Aunque esté bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots
-Además, la pareja quizás no sea para siempre, pero tu madre sí.
+% A mi madre por cada vela, cada charla y cada abrazo. A mi padre por hacerme ver la belleza del saber y sacarme siempre una sonrisa. A mi hermana por entenderme, escucharme y ser mi mayor soporte. A mis amigas y amigos por despejarme y achucharme. Y a mi pareja por todo el amor, por cada risa, por ser mi lugar seguro y por dejarme ver mi mejor versión. Y por supuesto, a todos ellos por el apoyo y la confianza en mi, sobre todo cuando más me ha hecho falta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -246,15 +249,9 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 % APÉNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
-\appendix
-\chapter{Manual de usuario}
-\label{app:manual}
+\input{manual}
 
 \end{document}
 
-
-
 %%%%% COSAS PENDIENTES:
-%% ESTOY CONFUNDIENDO CITAS CON BIBLIOGRAFIA??? PORQUE [1] CREO QU ES CITA
 %% COMO INCORPORO EL ANEXO DE LAS HISTORIAS DE USUARIO?

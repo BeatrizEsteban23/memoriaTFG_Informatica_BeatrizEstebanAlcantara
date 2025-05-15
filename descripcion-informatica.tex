@@ -39,9 +39,9 @@ La aplicación \textbf{Pinche} nace con el objetivo de facilitar la organizació
 
 \subsection{Requisitos funcionales}
 
-Para definir los requisitos funcionales se ha seguido una metodolog\'ia personalizada que combina las fortalezas de las metodolog\'ias \textbf{Scrum}, \textbf{Kanban} y \textbf{Extreme Programming (XP)}. Se ha seguido la estructura iterativa de Scrum, utilizando tableros Kanban para visualizar el flujo de tareas y adoptando buenas prácticas como pruebas continuas e integración frecuente propias de XP.
+Para definir los requisitos funcionales se ha seguido una metodología personalizada que combina las fortalezas de las metodologías \textbf{Scrum}, \textbf{Kanban} y \textbf{Extreme Programming (XP)}. Se ha seguido la estructura iterativa de Scrum, utilizando tableros Kanban para visualizar el flujo de tareas y adoptando buenas prácticas como pruebas continuas e integración frecuente propias de XP.
 
-La organización del desarrollo ha comenzado con la definición de \textbf{historias de usuario}, expresadas en el formato: ``Como [tipo de usuario], quiero [funcionalidad] para [beneficio]''. Estas historias fueron elaboradas y refinadas por el equipo de desarrollo en conjunto con el Product Owner, y se han estimado mediante la técnica de \textbf{Story Points} basada en la sucesión de Fibonacci.
+La organización del desarrollo ha comenzado con la definición de \textbf{historias de usuario}, expresadas en el formato: ``Como [tipo de usuario], quiero [funcionalidad] para [beneficio]''. El esfuerzo y tiempo necesario para implementar estas historias de usuario se ha estimado mediante la técnica de \textbf{Story Points} basada en la sucesión de Fibonacci.
 
 Las historias se han agrupado en \textbf{épicas}, agrupaciones lógicas que organizan funcionalidades principales: \textit{Cuenta de usuario}, \textit{Lista de la compra}, \textit{Recetas} e \textit{Invitados}.
 
@@ -100,9 +100,9 @@ La épica \textit{Invitados}, agrupa un total de ocho historias de usuario:
   \item Como usuario, quiero eliminar un invitado con la finalidad de eliminar ese invitado de mis invitados. Estimación: 1 punto de historia.
 \end{enumerate}
 
-Una vez refinadas y estimadas, se ha preparado el primer Sprint de dos semanas de duración. Se ha fijado un límite de 13 puntos de historia por Sprint. En este primer ciclo, se priorizaron historias de cada \'epica para implementar las funcionalidades básicas. Sin embargo, solo se completaron 6 de las 8 historias planificadas debido a la carga de requisitos no funcionales que se requeria implementar en este primer Sprint.
+Una vez refinadas y estimadas, se han realizado Sprints de dos semanas de duración. Al principio, estimé un límite de 13 puntos de historia por Sprint. En el primer Sprint, se priorizaron historias de cada épica para implementar las funcionalidades básicas. Sin embargo, solo se completaron 6 de las 8 historias planificadas debido a la carga de requisitos no funcionales que se requeria implementar en el primer Sprint.
 
-El seguimiento del Sprint se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La Figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la Figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint.
+El seguimiento de los Sprints se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La Figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la Figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint.
 
 \begin{figure}[H]
 \centering
@@ -118,9 +118,9 @@ El seguimiento del Sprint se ha realizado mediante un tablero \textbf{Kanban} cr
 \label{fig:final_sprint_trello}
 \end{figure}
 
-Tras la sesión de \textit{Sprint Review} y la de \textit{Sprint Retrospective}, se ajustó el alcance estimado para los siguientes Sprints a un máximo de 8 puntos de historia por iteración, adaptando así la velocidad al contexto real del desarrollo.
+Tras hacer el ejercicio de revisar y reflexionar sobre el Sprint, como marcan la sesión de \textit{Sprint Review} y la de \textit{Sprint Retrospective}, se ajustó el alcance estimado para los siguientes Sprints a un máximo de 8 puntos de historia por iteración, adaptando así la velocidad al contexto real del desarrollo.
 
-Una hoja resumen con todas las historias de usuario, agrupadas por épica, sus tareas y estimaciones, se adjunta en el anexo \texttt{Historias de usuario.xlsx}.
+Todas las historias de usuario, agrupadas por épica, sus tareas y estimaciones, se adjunta en el anexo \textit{Historias de usuario.xlsx}.
 
 \subsection{Requisitos no funcionales}
 
@@ -129,27 +129,25 @@ Además de la funcionalidad, se han establecido los siguientes requisitos no fun
 \begin{itemize}
     \item Conexión con Firestore y creación de repositorios de datos.
     \item Autenticación de usuarios con Firebase Authentication.
-    \item Estructura modular y escalable, basada en el patrón arquitectónico \textbf{MVVM} (Model-View-ViewModel).
+    \item Estructura modular y escalable, basada en el patrón arquitectónico MVVM (Model-View-ViewModel).
     \item Inyección de dependecias con Hilt.
-    \item Incluir tests tanto unitarios como de interfaz. %%REVISAR
+    \item Incluir tests tanto unitarios como de interfaz.
 \end{itemize}
 
-Estos requisitos definen el alcance funcional y técnico del proyecto, garantizando que el producto final responda tanto a las expectativas del usuario como a criterios de calidad del software.
+Estos requisitos definen el alcance funcional y técnico del proyecto, garantizando que el producto final responda tanto a las expectativas del usuario como a criterios de calidad y buenas prácticas del software.
 
 \section{Arquitectura y análisis}
 \label{sec:arquitectura-analisis}
 
-La arquitectura de una aplicación móvil resulta crítica para garantizar escalabilidad, optimización del código, rendimiento, solidez, mantenibilidad y la correcta separación de responsabilidades. En este proyecto se ha adoptado la arquitectura recomendada por Android, basada en una estructura en capas y el patrón MVVM (Model-View-ViewModel), con la inclusión de una capa de dominio opcional y la gestión de dependencias mediante Hilt.
+La arquitectura de una aplicación móvil resulta de suma importancia para garantizar escalabilidad, optimización del código, rendimiento, solidez, mantenibilidad y la correcta separación de responsabilidades. En este proyecto se ha adoptado la arquitectura recomendada por Android, basada en una estructura en capas y el patrón MVVM (Model-View-ViewModel), con la inclusión de una capa de dominio opcional y la gestión de dependencias mediante Hilt \cite{android-architecture} \cite{mvvm}.
 
 \subsection{Principios generales}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{./img/description/mvvm.png}
-\caption{Diagrama arquitectura MVVM.}
+\caption{Diagrama arquitectura MVVM. Fuente: \href{https://developer.android.com/topic/architecture?hl=es-419}{Android Developers}}
 \label{fig:mvvm}
-\vspace{0.2em}
-{\footnotesize \centering \textit{Fuente:} \url{https://developer.android.com/topic/architecture?hl=es-419} \par}
 \end{figure}
 
 Esta arquitectura promueve los principios de separación de responsabilidades, flujo unidireccional de datos, modularidad y testabilidad \cite{android-architecture}. El modelo propuesto divide la lógica de la aplicación en tres capas principales: UI, dominio (opcional) y datos, Figura~\ref{fig:mvvm}. En nuestro caso vamos a utilizar la arquitectura recomendada incluyendo la capa opcional de dominio, Figura~\ref{fig:pinche_architecture}.
@@ -157,7 +155,7 @@ Esta arquitectura promueve los principios de separación de responsabilidades, f
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{./img/description/pinche_architecture.png}
-\caption{Arquitectura de la aplicación Pinche.}
+\caption{Arquitectura de la aplicación Pinche}
 \label{fig:pinche_architecture}
 \end{figure}
 
@@ -167,20 +165,20 @@ La capa de interfaz de usuario es responsable de mostrar los datos al usuario y 
 
 \begin{itemize}
     \item \textbf{Elementos de la UI}: Son funciones de Jetpack Compose que renderizan los datos en pantalla, Figura~\ref{fig:recoverPasswordView}.
-    \item \textbf{Contenedores de estado}: Los ViewModel que retienen el estado de la UI y exponen datos reactivos mediante \texttt{StateFlow}, Figura~\ref{fig:recoverPasswordViewModel}.
+    \item \textbf{Contenedores de estado}: Los ViewModel que retienen el estado de la UI y exponen datos reactivos mediante \textit{StateFlow}, Figura~\ref{fig:recoverPasswordViewModel}.
 \end{itemize}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{./img/description/recoverPasswordView.png}
-\caption{Componente Compose \texttt{RecoverPasswordForm} de Pinche}
+\caption{Componente Compose \textit{RecoverPasswordForm} de Pinche}
 \label{fig:recoverPasswordView}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{./img/description/recoverPasswordViewModel.png}
-\caption{ViewModel \texttt{RecoverPasswordForm} de Pinche}
+\caption{ViewModel \textit{RecoverPasswordForm} de Pinche}
 \label{fig:recoverPasswordViewModel}
 \end{figure}
 
@@ -191,7 +189,7 @@ La capa de dominio encapsula la lógica empresarial que puede ser compartida ent
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{./img/description/recoverUseCase.png}
-\caption{Caso de uso \texttt{SendPasswordResetEmailUseCase} de Pinche}
+\caption{Caso de uso \textit{SendPasswordResetEmailUseCase} de Pinche}
 \label{fig:recoverUseCase}
 \end{figure}
 
@@ -209,7 +207,7 @@ En la Figura~\ref{fig:recoverPassRepo} muestra la función del reposositorio de 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{./img/description/recoverPassRepo.png}
-\caption{Función \texttt{sendPasswordResetEmail} en el repositorio de autenticación}
+\caption{Función \textit{sendPasswordResetEmail} en el repositorio de autenticación}
 \label{fig:recoverPassRepo}
 \end{figure}
 
@@ -217,13 +215,44 @@ Gracias a esta separación, si por ejemplo en el futuro se quisiera cambiar de b
 
 \subsection{Gestión de dependencias con Hilt}
 
-La gestión de dependencias se realiza mediante la biblioteca Hilt como ya hemos comentado. Hilt proporciona objetos preconfigurados a las clases de Android y administra automáticamente su ciclo de vida \cite{hilt-android}.
+La gestión de dependencias se realiza mediante la biblioteca Hilt como ya hemos comentado. Hilt proporciona objetos preconfigurados a las clases de Android y administra automáticamente su ciclo de vida \cite{hilt}.
 
-%% foto de HIlt y explicación como parte confusa
+Dada la relativa complejidad y el tiempo dedicado a comprender cómo gestiona Hilt las dependecias, considero que merece la pena explicar cómo se ha integrado en Pinche en mayor detalle.
+
+En primer lugar, para que la app Pinche use Hilt debemos usar la anotación \textit{@HiltAndroidApp}para activar la generación de código Hilt, Figura~\ref{fig:pincheAppHilt}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{./img/description/pinche_app_hilt.png}
+\caption{Definición de la clase \textit{PincheApplication}}
+\label{fig:pincheAppHilt}
+\end{figure}
+
+Para realizar una inyección de dependecia, Hilt necesita saber cómo proporcionar una instancia de la misma al componente al que se inyecta. Esto lo realiza a través de vinculaciones, para ello hemos usado inyecciones de constructor a través de la anotación \textit{@Inject} en la construción de la clases de los componentes que necesitan la dependencia. Un ejemplo de inyección de constructor puede verse en el caso de uso \textit{SendPasswordResetEmailUseCase} en la Figura~\ref{fig:recoverUseCase}.
+
+Pero en este caso concreto no sirve unicamente con inyectar \textit{AuthRepository} ya que es una interfaz que se implementa en \textit{AuthRepositoryImpl} y Hilt no permite la insercción de interfaces como dependencia. Para ello necesitamos también generar una vinculación entre la interfaz y la implementación para que Hilt sepa como proporcionar una instancia de la misma. Para ello generamos un módulo de Hilt, con la anotación \textit{@Module} y establecemos el alcance del módulo y de las clases de Android que lo usarán con la anotación \textit{@InstallIn}. La Figura~\ref{fig:authModuleHilt} muestra el modulo de Hilt \textit{AuthModule} con un alcance de toda la aplicación \textit{SingletonComponent::class}. Se necesita también una función abstracta anotada con \textit{@Binds} que concreto que implementación usar para proporcionar una instancia de la interfaz.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{./img/description/auth_module_hilt.png}
+\caption{Módulo Hilt \textit{AuthModule} de Pinche}
+\label{fig:authModuleHilt}
+\end{figure}
+
+Tampoco se puede inyectar directamente clases que no son de nuestra propiedad y proevienen de bibliotecas externas, como es el caso de Firebase Authentication y Firebase Firestore. Para la insercción de estas clases necesitaremos implementar un módulo Hilt con funciones con la anotación @Provides que indiquen cómo inyectarlas, Figura~\ref{fig:firebaseHilt}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{./img/description/firebase_hilt.png}
+\caption{Módulo Hilt \textit{FirebaseModule} de Pinche}
+\label{fig:firebaseHilt}
+\end{figure}
+
+De esta manera, se consigue que de manera directa y sin pasar las dependencia de un componente a otro, el componente acceda a ella. También veremos en la \autoref{sec:pruebas} lo que facilita sustituir estas dependencias por dependencias simuladas de cara a testear componentes.
 
 \subsection{Ventajas de esta arquitectura}
 
-La aplicación Pinche se beneficia de esta arquitectura al conseguir:
+Esta arquitecura aspectos fundamentales al código de la aplicación Pinche:
 
 \begin{itemize}
     \item Mejor separación de responsabilidades entre componentes.
@@ -234,17 +263,23 @@ La aplicación Pinche se beneficia de esta arquitectura al conseguir:
 
 Este enfoque permite un desarrollo estructurado, coherente y sostenible, favoreciendo además la implementación de buenas prácticas de ingeniería de software.
 
-
 \section{Diseño e implementación}
 \label{sec:diseno-implementacion}
 
-El desarrollo de la aplicación \textbf{Pinche} se ha centrado en aplicar buenas prácticas de ingeniería de software para Android, incluyendo el patrón MVVM, el uso de Jetpack Compose y la organización modular del código.
-
 \subsection{Análisis de requerimientos y estructura funcional}
 
-La aplicación ha sido diseñada en base a un conjunto de funcionalidades organizadas en tres secciones principales: listas de la compra, recetas e invitados. Este enfoque permite abordar de forma modular las necesidades de los usuarios y facilita la extensión del sistema.
+La aplicación ha sido diseñada en base a un conjunto de funcionalidades organizadas en cuatro secciones principales: gestión de cuenta de usuario, listas de la compra, recetas e invitados. Este enfoque permite abordar de forma modular las necesidades de los usuarios y facilita la extensión del sistema.
 
-\textbf{METER AQUI LO DE FIGMA Y DIAGRAMAS DE COMPONENTES, DE CASOS DE USO Y ESAS COSAS?}
+Para el diseño de la aplicación Pinche utilicé Figma, hice un primer prototipo de cómo iba a organizar y qué estilo iba a seguir. Fue un primer prototipo incompleto, pero que me sirvio para visualizar la aplicación e iterarlo para conseguir una interfaz intuitiva. El salto del diseño a lo realmente implementado es notable, pero la estructura y muchas de las decisiones a las que llegue creando el diseño se han mantenido, Figura~\ref{fig:pincheFigma}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./img/description/pinche_figma.png}
+\caption{Primer prototipo de Pinche en Figma}
+\label{fig:pincheFigma}
+\end{figure}
+
+\textbf{DIAGRAMAS DE COMPONENTES, DE CASOS DE USO Y ESAS COSAS?}
 
 \textbf{METER CAPTURAS DE LA PROPIA APLICACION.}
 
@@ -261,32 +296,18 @@ El modelo de datos se ha estructurado para cubrir las siguientes entidades princ
 Este modelo facilita la integración de funcionalidades como el cálculo de ingredientes según el número de comensales, la generación de listas automáticas a partir de recetas y la personalización de menús para invitados con restricciones.
 
 
-\subsection{Decisiones técnicas relevantes HABLAR DE Jetpack Navigation SOLO? aqui o donde? Y SU INTEGRACION CON HILT NAVIGATION}
-
-Durante el desarrollo se tomaron decisiones clave como:
-
-\begin{itemize}
-    \item Uso de \textbf{Jetpack Navigation} para gestionar la navegación entre pantallas de manera estructurada.
-    \item Implementación de \textbf{Hilt} para inyección de dependencias, facilitando el testeo y la escalabilidad.
-    \item Empleo de \textbf{StateFlow} para la gestión del estado de la UI, evitando fugas de memoria.
-    \item Utilización de \textbf{Git} como sistema de control de versiones, junto con ramas por tarea y buenas prácticas de integración continua (CI).
-    \item Desarrollo colaborativo organizado a través de tableros \textbf{Trello} y prototipos creados en \textbf{Figma}.
-\end{itemize}
-
 Esta implementación modular y centrada en buenas prácticas garantiza que Pinche pueda mantenerse y escalarse en el tiempo, facilitando la extensi\'on de funcionalidades futuras.
 
 \section{Pruebas}
 \label{sec:pruebas}
 
-El aseguramiento de la calidad en el desarrollo de la aplicación \textbf{Pinche} se ha abordado mediante una estrategia de pruebas estructurada que cubre distintos niveles de validación del sistema: pruebas unitarias, de interfaz, de integración, de extremo a extremo (E2E) y cobertura de código. Esta estrategia ha permitido verificar que los componentes funcionan correctamente de forma individual y en conjunto.
+El asegurar la calidad en el desarrollo de la aplicación Pinche se ha abordado mediante una estrategia de pruebas estructurada que cubre distintos niveles de validación del sistema: pruebas unitarias y de interfaz. Esta estrategia ha permitido verificar que los componentes funcionan correctamente.
 
 \subsection{Pruebas unitarias}
 
-Las pruebas unitarias validan pequeñas unidades de código de forma aislada, principalmente funciones puras o clases sin dependencias externas. Para ello se ha utilizado \textbf{JUnit4} como framework base, complementado con \textbf{MockK} para simular comportamientos de dependencias externas como repositorios o servicios \cite{android-testing}.
+Las pruebas unitarias validan pequeñas unidades de código de forma aislada, como por ejemplo los casos de uso. Para ello se ha utilizado \textbf{JUnit4} como framework base y \textbf{MockK} para simular comportamientos de dependencias externas como repositorios o servicios \cite{android-testing}.
 
-MockK se ha elegido frente a otras alternativas como Mockito debido a su compatibilidad nativa con Kotlin, su soporte para coroutines y su sintaxis más idiomática.
-
-el Listado~\ref{lst:signinTest},
+El Listado~\ref{lst:signinTest} muestra la implementación de un test unitario para el caso de uso \textit{SignInUserUseCase} que permite al usuario iniciar sesión en la aplicación.
 
 \begin{lstlisting}[language=Java, caption={SignInUserUseCaseTest}, label={lst:signinTest}]
   @ExperimentalCoroutinesApi
@@ -298,7 +319,7 @@ el Listado~\ref{lst:signinTest},
     private val authRepository: AuthRepository = mockk()
     private lateinit var signInUserUseCase: SignInUserUseCase
 
-    private val email = "test@example.com"
+    private val email = "test@email.com"
     private val password = "123456"
 
     @Before
@@ -331,29 +352,4 @@ el Listado~\ref{lst:signinTest},
 
 \subsection{Pruebas de interfaz (UI)}
 
-Para comprobar el comportamiento de la interfaz de usuario, se ha utilizado la librería \texttt{androidx.compose.ui:ui-test-junit4}, integrada en Jetpack Compose. Esta herramienta permite verificar la presencia de elementos, sus estados, y simular acciones del usuario como clics o introducción de texto.
-
-Frente a otras librerías tradicionales como Espresso, esta herramienta ofrece mejor sincronización con el ciclo de recomposición de Compose y facilita pruebas más declarativas \cite{android-testing}.
-
-\subsection{Pruebas de integración}
-
-Las pruebas de integración validan que múltiples componentes trabajen juntos de forma coherente. En este proyecto se han utilizado:
-
-\begin{itemize}
-    \item \textbf{Firebase Emulator Suite}, que simula los servicios de Firebase (Firestore y Auth) localmente \cite{firebase-emulator}.
-    \item \textbf{Repositorios simulados} combinados con \textbf{Hilt} para sustituir dependencias reales durante las pruebas.
-\end{itemize}
-
-Este enfoque permite realizar pruebas realistas pero controladas, sin depender de servicios externos ni afectar datos en producción.
-
-\subsection{Pruebas end-to-end (E2E)}
-
-Las pruebas E2E verifican que la aplicación funciona correctamente en su conjunto, desde la interacción del usuario hasta el acceso a datos y navegación.
-
-Se ha empleado \textbf{Espresso}, el framework oficial de Google para pruebas E2E en Android, junto con Firebase Emulator Suite para simular los servicios remotos. Estas pruebas son útiles para validar flujos completos como el inicio de sesión, la creación de listas o la adición de productos \cite{android-testing}.
-
-\subsection{Cobertura de código}
-
-Como métrica adicional de calidad, se ha utilizado \textbf{JaCoCo} para generar informes de cobertura de código. Esto permite conocer qué líneas del proyecto han sido ejecutadas durante las pruebas y detectar zonas sin cobertura suficiente \cite{jacoco}.
-
-JaCoCo se integra fácilmente con Gradle y Android Studio, proporcionando estadísticas precisas que se han utilizado para ajustar el alcance de las pruebas implementadas.
+Las pruebas de interfaz de usuario comprueban el estado de las vistas que va a visualizar el usuario como hemos explicado en la \autoref{sec:test-tools}.
