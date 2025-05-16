@@ -32,9 +32,9 @@ Las principales razones por las que se ha decidido usar Kotlin para el desarroll
 
 Para la construcción de la interfaz de usuario se ha utilizado \textbf{Jetpack Compose}, el framework de Android más moderno para crear interfaces de forma declarativa. Su primera versión estable fue lanzada en 2020. Esta elección responde a usar herramientas actuales, recomendadas por Google, que permiten mayor productividad y fluidez en el desarrollo.
 
-Durante mucho tiempo, el desarrollo de interfaces en Android se ha basado en el uso de archivos \texttt{XML} que describen los elementos de la interfaz de forma estática, combinados con código Java o Kotlin para enlazar y actualizar esos elementos en tiempo de ejecución. Este enfoque impone una separación forzada entre lógica e interfaz, que complica la sincronización entre los datos y la vista.
+Durante mucho tiempo, el desarrollo de interfaces en Android se ha basado en el uso de archivos \textit{XML} que describen los elementos de la interfaz de forma estática, combinados con código Java o Kotlin para enlazar y actualizar esos elementos en tiempo de ejecución. Este enfoque impone una separación forzada entre lógica e interfaz, que complica la sincronización entre los datos y la vista.
 
-\textbf{Jetpack Compose} rompe con este modelo tradicional al introducir una forma de construir la UI de manera totalmente \textbf{declarativa}, es decir, describiendo \textit{qué} debe mostrarse en lugar de \textit{cómo} hacerlo paso a paso. La interfaz se define directamente en Kotlin, mediante funciones composables, lo que permite una mejor integración con la lógica de negocio, la reutilización de componentes y mejora la legibilidad del código \cite{jetpack}.
+\textbf{Jetpack Compose} introduce una forma de construir la UI de manera totalmente \textbf{declarativa}, es decir, describiendo \textit{qué} debe mostrarse en lugar de \textit{cómo} hacerlo paso a paso. La interfaz se define directamente en Kotlin, mediante funciones composables, lo que permite una mejor integración con la lógica de negocio, la reutilización de componentes y mejora la legibilidad del código \cite{jetpack}.
 
 Entre las principales ventajas de Jetpack Compose frente a XML destacan:
 
@@ -56,6 +56,8 @@ Para la gestión de la navegación entre pantallas se ha utilizado \textbf{Jetpa
 
 \subsection{Coroutines}
 
+En Kotlin se recomienda el uso de corrutinas para aumentar la productividad de la aplicación mediante la gestión de tareas de larga duración o asíncronas. Una corrutina es un patrón de diseño de simultaneidad, permiten simplificar el código que se ejecuta de manera asíncrona evitando bloquear el subproceso principal y que la aplicación se bloquee \cite{android-coroutines}.
+
 \subsection{Hilt}
 
 Con el objetivo de aportar robustez y escalabilidad a la aplicación, \textbf{Hilt} se ha intregado como sistema de \textit{inyección de dependencias}. Esto permite simplificar la gestión de instancias y facilitar su sustitución por instancias de prueba para llevar a cabo los test. También se ha tenido en cuenta su integración con el ciclo de vida recomendado de Android y su compatibilidad con Jetpack \cite{hilt}.
@@ -64,7 +66,7 @@ Con el objetivo de aportar robustez y escalabilidad a la aplicación, \textbf{Hi
 
 \textbf{Firebase}, de Google, es una plataforma de desarrollo de aplicaciones que proporciona una serie de servicios backend listos para usar: bases de datos en tiempo real, autenticación de usuarios, almacenamiento en la nube, análisis, herramientas de pruebas y despliegue. Está pensada especialmente para aplicaciones móviles y web. Su uso agiliza significamente el desarrollo del backend en aplicaciones \cite{firebase}.
 
-En este proyecto se utilizan principalmente dos componentes clave de Firebase:
+En este proyecto se utilizan principalmente dos componentes de Firebase:
 
 \begin{itemize}
     \item \textbf{Firebase Authentication:} permite implementar de forma sencilla el mecanismo de registro y acceso mediante email y contraseña que hemos utilizado en Pinche \cite{firebase-auth}.
@@ -80,7 +82,7 @@ El entorno de desarrollo utilizado ha sido \textbf{Android Studio}, IDE oficial 
 
 \section{Control de versiones}
 
-Para la gestión del código fuente se ha utilizado el conocido sistema de control de versiones \textbf{Git} y \textbf{GitHub} como repositorio remoto. El trabajo se ha organizado siguiendo prácticas comunes en entornos colaborativos. Esto ha permitido mantener versiones estables y realizar integraciones progresivas de nuevas funcionalidades. El flujo de trabajo ha sido el siguiente: se han creado ramas para la implementación de tareas concretas, por ejemplo: \texttt{feature/login}, una vez finalizada la tarea y testeada de manera atómica su funcionalidad se mergea en la rama \texttt{dev} donde se comprueba que la nueva funcionalidad no afecta a las implementadas anteriormente y tras las comprobaciones se realiza la actualizacion de la rama \texttt{main} que es la rama estable del proyecto \cite{git} \cite{github}.
+Para la gestión del código fuente se ha utilizado el conocido sistema de control de versiones \textbf{Git} y \textbf{GitHub} como repositorio remoto. El trabajo se ha organizado siguiendo prácticas comunes en entornos colaborativos. Esto ha permitido mantener versiones estables y realizar integraciones progresivas de nuevas funcionalidades. El flujo de trabajo ha sido el siguiente: se han creado ramas para la implementación de tareas concretas, por ejemplo: \textit{feature/login}, una vez finalizada la tarea y testeada de manera atómica su funcionalidad se mergea en la rama \textit{dev} donde se comprueba que la nueva funcionalidad no afecta a las implementadas anteriormente y tras las comprobaciones se realiza la actualizacion de la rama \textit{main} que es la rama estable del proyecto \cite{git, github}.
 
 \section{Metodologías de desarrollo}
 
@@ -119,9 +121,9 @@ Los principios fundamentales de Lean Startup son:
 
 \subsection{Agile}
 
-La metodología \textbf{Agile} se centra en la flexibilidad, la colaboración y la entrega incremental de valor al cliente durante el desarrollo de un proyecto. Con esta metodología se pretende generar una mayor adaptabilidad frente a los cambios que surgen durante el desarrollo, reduciendo los tiempos de entrega y mejorando la calidad del producto.
+La metodología \textbf{Agile} se centra en la flexibilidad, la colaboración y la entrega incremental de valor al cliente durante el desarrollo de un proyecto. Con esta metodología se pretende generar una mayor adaptabilidad frente a los cambios que surgen durante el desarrollo, reduciendo los tiempos de entrega y mejorando la calidad del producto \cite{agile, what-is-agile, agile-essentials}.
 
-Agile se basa en el \textit{Manifiesto Ágil}, publicado en 2001, que consta de cuatro valores principales y doce principios \cite{agile-manifest} \cite{agile-manifest-principles}.
+Agile se basa en el \textit{Manifiesto Ágil}, publicado en 2001, que consta de cuatro valores principales y doce principios \cite{agilemanifest, agilemanifestprinciples}.
 
 \paragraph{Valores del Manifiesto Ágil:}
 \begin{itemize}
@@ -149,7 +151,7 @@ Agile se basa en el \textit{Manifiesto Ágil}, publicado en 2001, que consta de 
 
 Algunas metodologías que surgen del enfoque Agile son \textbf{Scrum}, \textbf{Kanban} y \textbf{Extreme Programming (XP)}.
 
-\paragraph{Scrum.} Es una metodología de trabajo que permite el manejo de proyectos complejos permitiendo que los equipos trabajen de manera iterativa e incremental. El trabajo se organiza en \textbf{Sprints}, que son ciclos cortos de tiempo que tienen como objetivo un incremento funcional del producto que el equipo está desarrollando \cite{scrum}.
+\paragraph{Scrum.} Es una metodología de trabajo que permite el manejo de proyectos complejos permitiendo que los equipos trabajen de manera iterativa e incremental. El trabajo se organiza en \textbf{Sprints}, que son ciclos cortos de tiempo que tienen como objetivo un incremento funcional del producto que el equipo está desarrollando \cite{scrum, what-is-scrum}.
 
 Entre sus principales elementos dentro de la metodología Scrum encontramos roles claves como Product Owner, Scrum Master y el equipo de desarrollo. El \textbf{Product Owner} define cuáles son las prioridades que maximizan el valor del producto. El \textbf{Scrum Master} facilita el proceso Scrum y se asegura de que se aplica correctamente. Y, por último, el \textbf{equipo de desarrollo} es el encargado de implementar el producto.
 
@@ -166,7 +168,7 @@ Para la gestión del tiempo dentro de un sprint, Scrum recomienda realizar cuatr
 
 \paragraph{Kanban.} Para esta metodología se suele utilizar un tablero visual (\textit{Tablero Kanban}) para representar el flujo de trabajo. Las tareas se representan como tarjetas que se mueven por columnas como \textit{Por hacer}, \textit{En progreso} y \textit{Terminado}. Se establece un límite de trabajo en curso (WIP: Work In Progress, trabajo en progreso) para evitar sobrecargas. Kanban permite detectar cuellos de botella, optimizar procesos y mejorar de forma continua la eficiencia del equipo \cite{kanban}.
 
-\paragraph{Extreme Programming (XP).} XP enfatiza la mejora continua y la satisfacción del cliente \cite{extreme-programming}. Reduce riesgos mediante prácticas técnicas rigurosas:
+\paragraph{Extreme Programming (XP).} XP enfatiza la mejora continua y la satisfacción del cliente \cite{extreme-programming,extreme-programming-alliance}. Reduce riesgos mediante prácticas técnicas rigurosas:
 
 \begin{enumerate}
     \item Desarrollo iterativo con entregas frecuentes de software funcional.
@@ -184,17 +186,11 @@ La interfaz ha sido diseñada siguiendo principios de UX/UI centrados en la simp
 \textbf{Figma} es una herramienta web de diseño de interfaces que permite crear prototipos interactivos, colaborar en tiempo real y compartir diseños entre equipos multidisciplinares. Es ampliamente utilizada en entornos de desarrollo ágil, ya que facilita la comunicación entre diseñadores, desarrolladores y clientes \cite{figma}.
 
 \section{Herramientas de testeo}
-\label{sec:test}
-Durante el desarrollo se han implementado tests para garantizar la calidad del producto. A continuación se describen los tipos de test implementados y las herramientas utilizadas en cada caso.
+\label{sec:test-tools}
+Durante el desarrollo se han implementado tests para garantizar la calidad del producto. A continuación se describe el tipo de test implementado y las herramientas utilizadas para ello.
 
 \subsection{Test unitarios}
 
-Las pruebas unitarias se centran en comprobar el comportamiento de unidades individuales de código, normalmente funciones, casos de uso o clases, de forma aislada.
+Las pruebas unitarias se centran en comprobar el comportamiento de unidades atómicas de código de forma aislada, normalmente funciones, casos de uso o clases.
 
-\textbf{JUnit4} ha sido la herramienta utiliza para implementar los test unitarios Pinche \cite{android-testing}. Se trata del framework más utilizado en el entorno Kotlin, está ampliamente soportado y cuenta con una buena integración en Android Studio. Junto a JUnit, se ha utilizado \textbf{MockK}, una librería de mocking especialmente diseñada para Kotlin, que permite simular dependencias como repositorios y da soporte para coroutines.
-
-\subsection{Test de interfaz de usuario (UI)}
-
-Los tests de UI tienen como objetivo comprobar cómo se comportan los componentes de la interfaz frente a interacciones del usuario.
-
-Para implementar estos tests en Pinche, se ha utilizado la librería \texttt{androidx.compose.ui:ui-test-junit4}, específica para Jetpack Compose. Permite simular eventos de usuario y verificar la presencia y el estado de los componentes de la vista \cite{android-testing}. Está optimizada para el modelo declarativo de Compose, esto hace que sea la más sencilla al estar ya integrada en el ciclo de vida de la UI de Compose.
+\textbf{JUnit4} ha sido la herramienta utiliza para implementar los test unitarios Pinche \cite{android-testing}. Se trata del framework más utilizado en el entorno Kotlin, está ampliamente soportado y cuenta con una buena integración en Android Studio. Junto a JUnit, se ha utilizado \textbf{MockK}, una librería de mocking especialmente diseñada para Kotlin, que permite simular dependencias como repositorios y da soporte para corrutinas.

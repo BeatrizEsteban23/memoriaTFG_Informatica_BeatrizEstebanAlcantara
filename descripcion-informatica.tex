@@ -70,7 +70,7 @@ La épica \textit{Lista de la compra} agrupa un total de trece historias de usua
   \item Como usuario, quiero seleccionar un artículo como comprado con la finalidad de poder visualizar qué artículos ya he comprado. Estimación: 1 punto de historia.
   \item 	Como usuario, quiero seleccionar un artículo que ya había seleccionado como comprado como no comprado en una lista de la compra con la finalidad de poder volver a tener ese artículo como pendiente de comprar. Estimación: 1 punto de historia.
   \item Como usuario, quiero eliminar un artículo de una lista de la compra con la finalidad de dicho artículo deje de formar parte de la lista de la compra. Estimación: 1 punto de historia.
-  \item Como usuario, quiero especificar el nombre del artículo, la cantidad, la unidad de medida de esa cantidad, la tienda donde prefiero comprar y opcionalmente una fotografía del artículo, con la finalidad de disponer de toda la información que necesito de ese artículo. Estimación: 2 puntos de historia.
+  \item Como usuario, quiero especificar el nombre del artículo, la cantidad, la unidad de medida de esa cantidad y la tienda donde prefiero comprarlo con la finalidad de disponer de toda la información que necesito de ese artículo. Estimación: 2 puntos de historia.
   \item Como usuario, quiero editar la información de un artículo de una lista de la compra con la finalidad de modificar su contenido. Estimación: 1 punto de historia.
 \end{enumerate}
 
@@ -102,7 +102,7 @@ La épica \textit{Invitados}, agrupa un total de ocho historias de usuario:
 
 Una vez refinadas y estimadas, se han realizado Sprints de dos semanas de duración. Al principio, estimé un límite de 13 puntos de historia por Sprint. En el primer Sprint, se priorizaron historias de cada épica para implementar las funcionalidades básicas. Sin embargo, solo se completaron 6 de las 8 historias planificadas debido a la carga de requisitos no funcionales que se requeria implementar en el primer Sprint.
 
-El seguimiento de los Sprints se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La Figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la Figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint.
+El seguimiento de los Sprints se ha realizado mediante un tablero \textbf{Kanban} creado en \textbf{Trello}, donde se representan las historias como tarjetas con sus tareas asociadas. La Figura~\ref{fig:user_story_trello} muestra cómo se define una historia de usuario en Trello y la Figura~\ref{fig:final_sprint_trello} el estado final del tablero en el primer Sprint \cite{trello}.
 
 \begin{figure}[H]
 \centering
@@ -131,7 +131,7 @@ Además de la funcionalidad, se han establecido los siguientes requisitos no fun
     \item Autenticación de usuarios con Firebase Authentication.
     \item Estructura modular y escalable, basada en el patrón arquitectónico MVVM (Model-View-ViewModel).
     \item Inyección de dependecias con Hilt.
-    \item Incluir tests tanto unitarios como de interfaz.
+    \item Incluir tests unitarios.
 \end{itemize}
 
 Estos requisitos definen el alcance funcional y técnico del proyecto, garantizando que el producto final responda tanto a las expectativas del usuario como a criterios de calidad y buenas prácticas del software.
@@ -139,7 +139,7 @@ Estos requisitos definen el alcance funcional y técnico del proyecto, garantiza
 \section{Arquitectura y análisis}
 \label{sec:arquitectura-analisis}
 
-La arquitectura de una aplicación móvil resulta de suma importancia para garantizar escalabilidad, optimización del código, rendimiento, solidez, mantenibilidad y la correcta separación de responsabilidades. En este proyecto se ha adoptado la arquitectura recomendada por Android, basada en una estructura en capas y el patrón MVVM (Model-View-ViewModel), con la inclusión de una capa de dominio opcional y la gestión de dependencias mediante Hilt \cite{android-architecture} \cite{mvvm}.
+La arquitectura de una aplicación móvil resulta de suma importancia para garantizar escalabilidad, optimización del código, rendimiento, solidez, mantenibilidad y la correcta separación de responsabilidades. En este proyecto se ha adoptado la arquitectura recomendada por Android, basada en una estructura en capas y el patrón MVVM (Model-View-ViewModel), con la inclusión de una capa de dominio opcional y la gestión de dependencias mediante Hilt \cite{android-architecture, mvvm}.
 
 \subsection{Principios generales}
 
@@ -170,25 +170,25 @@ La capa de interfaz de usuario es responsable de mostrar los datos al usuario y 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/description/recoverPasswordView.png}
+\includegraphics[width=0.8\textwidth]{./img/description/recoverPasswordView.png}
 \caption{Componente Compose \textit{RecoverPasswordForm} de Pinche}
 \label{fig:recoverPasswordView}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/description/recoverPasswordViewModel.png}
-\caption{ViewModel \textit{RecoverPasswordForm} de Pinche}
+\includegraphics[width=0.8\textwidth]{./img/description/recoverPasswordViewModel.png}
+\caption{ViewModel \textit{RecoverPasswordViewModel} de Pinche}
 \label{fig:recoverPasswordViewModel}
 \end{figure}
 
 \subsection{Capa de dominio}
 
-La capa de dominio encapsula la lógica empresarial que puede ser compartida entre distintos ViewModels. En ella se definen los casos de uso (\textit{use cases}) como clases que representan acciones o procesos específicos de la aplicación, facilitando la reutilización de código y la claridad del flujo de datos. La Figura~\ref{fig:recoverUseCase} muestra un ejemplo de caso de uso de la aplicación Pinche.
+La capa de dominio se encarga de la lógica empresarial que puede ser compartida entre distintos ViewModels. En ella se definen los casos de uso (\textit{use cases}) como clases que representan acciones específicas de la aplicación, facilitando la reutilización de código y la claridad del flujo de datos. La Figura~\ref{fig:recoverUseCase} muestra un ejemplo de caso de uso de la aplicación Pinche.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/description/recoverUseCase.png}
+\includegraphics[width=0.8\textwidth]{./img/description/recoverUseCase.png}
 \caption{Caso de uso \textit{SendPasswordResetEmailUseCase} de Pinche}
 \label{fig:recoverUseCase}
 \end{figure}
@@ -202,7 +202,7 @@ Esta capa es responsable de la obtención y persistencia de datos. Se organiza e
     \item \textbf{Fuentes de datos}: Pueden ser locales o remotas. En nuestro caso, usamos la fuente de datos remota Firebase Authentication que proporciona servicios de autenticación y la base de datos en la nube Firestore \cite{firestore, firebase-auth}.
 \end{itemize}
 
-En la Figura~\ref{fig:recoverPassRepo} muestra la función del reposositorio de autenticación responsable de intermediar con Firebase Authentication para recuperar la contraseña de un usuario enviándole un correo electrónico a su dirección de correo.
+En la Figura~\ref{fig:recoverPassRepo} muestra la función del reposositorio de autenticación responsable de intermediar con Firebase Authentication para recuperar la contraseña de un usuario enviándole un correo electrónico a su dirección de correo. Esta intermediación con Firebase Authentication se realiza a traves de una función suspendida, que se ejecuta de manera asíncrona en un subproceso distinto al principal, haciendo uso de las corrutinas explicadas anteriormente.
 
 \begin{figure}[H]
 \centering
@@ -223,18 +223,18 @@ En primer lugar, para que la app Pinche use Hilt debemos usar la anotación \tex
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/description/pinche_app_hilt.png}
+\includegraphics[width=0.6\textwidth]{./img/description/pinche_app_hilt.png}
 \caption{Definición de la clase \textit{PincheApplication}}
 \label{fig:pincheAppHilt}
 \end{figure}
 
 Para realizar una inyección de dependecia, Hilt necesita saber cómo proporcionar una instancia de la misma al componente al que se inyecta. Esto lo realiza a través de vinculaciones, para ello hemos usado inyecciones de constructor a través de la anotación \textit{@Inject} en la construción de la clases de los componentes que necesitan la dependencia. Un ejemplo de inyección de constructor puede verse en el caso de uso \textit{SendPasswordResetEmailUseCase} en la Figura~\ref{fig:recoverUseCase}.
 
-Pero en este caso concreto no sirve unicamente con inyectar \textit{AuthRepository} ya que es una interfaz que se implementa en \textit{AuthRepositoryImpl} y Hilt no permite la insercción de interfaces como dependencia. Para ello necesitamos también generar una vinculación entre la interfaz y la implementación para que Hilt sepa como proporcionar una instancia de la misma. Para ello generamos un módulo de Hilt, con la anotación \textit{@Module} y establecemos el alcance del módulo y de las clases de Android que lo usarán con la anotación \textit{@InstallIn}. La Figura~\ref{fig:authModuleHilt} muestra el modulo de Hilt \textit{AuthModule} con un alcance de toda la aplicación \textit{SingletonComponent::class}. Se necesita también una función abstracta anotada con \textit{@Binds} que concreto que implementación usar para proporcionar una instancia de la interfaz.
+Pero en este caso concreto no sirve únicamente con inyectar \textit{AuthRepository} ya que es una interfaz que se implementa en \textit{AuthRepositoryImpl} y Hilt no permite la insercción de interfaces como dependencia. Para ello necesitamos también generar una vinculación entre la interfaz y la implementación para que Hilt sepa como proporcionar una instancia de la misma. Para ello generamos un módulo de Hilt, con la anotación \textit{@Module} y establecemos el alcance del módulo y de las clases de Android que lo usarán con la anotación \textit{@InstallIn}. La Figura~\ref{fig:authModuleHilt} muestra el modulo de Hilt \textit{AuthModule} con un alcance de toda la aplicación \textit{SingletonComponent::class}. Se necesita también una función abstracta anotada con \textit{@Binds} que concreto que implementación usar para proporcionar una instancia de la interfaz.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{./img/description/auth_module_hilt.png}
+\includegraphics[width=0.8\textwidth]{./img/description/auth_module_hilt.png}
 \caption{Módulo Hilt \textit{AuthModule} de Pinche}
 \label{fig:authModuleHilt}
 \end{figure}
@@ -266,11 +266,9 @@ Este enfoque permite un desarrollo estructurado, coherente y sostenible, favorec
 \section{Diseño e implementación}
 \label{sec:diseno-implementacion}
 
-\subsection{Análisis de requerimientos y estructura funcional}
+\subsection{Diseño}
 
-La aplicación ha sido diseñada en base a un conjunto de funcionalidades organizadas en cuatro secciones principales: gestión de cuenta de usuario, listas de la compra, recetas e invitados. Este enfoque permite abordar de forma modular las necesidades de los usuarios y facilita la extensión del sistema.
-
-Para el diseño de la aplicación Pinche utilicé Figma, hice un primer prototipo de cómo iba a organizar y qué estilo iba a seguir. Fue un primer prototipo incompleto, pero que me sirvio para visualizar la aplicación e iterarlo para conseguir una interfaz intuitiva. El salto del diseño a lo realmente implementado es notable, pero la estructura y muchas de las decisiones a las que llegue creando el diseño se han mantenido, Figura~\ref{fig:pincheFigma}.
+Para el diseño de la aplicación Pinche utilicé la herramienta Figma. Hice un primer prototipo de cómo iba a organizar y qué estilo iba a seguir. Fue un primer prototipo incompleto, pero que me sirvió para visualizar la aplicación e iterarlo para conseguir una interfaz intuitiva. El salto del diseño a lo realmente implementado es notable, pero la estructura y muchas de las decisiones a las que llegue creando el diseño se han mantenido, Figura~\ref{fig:pincheFigma}.
 
 \begin{figure}[H]
 \centering
@@ -279,29 +277,47 @@ Para el diseño de la aplicación Pinche utilicé Figma, hice un primer prototip
 \label{fig:pincheFigma}
 \end{figure}
 
-\textbf{DIAGRAMAS DE COMPONENTES, DE CASOS DE USO Y ESAS COSAS?}
+\subsection{Análisis de requerimientos y estructura funcional}
 
-\textbf{METER CAPTURAS DE LA PROPIA APLICACION.}
+La aplicación ha sido diseñada en base a un conjunto de funcionalidades organizadas en cuatro secciones principales: gestión de cuenta de usuario, listas de la compra, recetas e invitados.
 
-El modelo de datos se ha estructurado para cubrir las siguientes entidades principales:
+Los repositorios han sido implementados para gestionar los datos con Firebase Autentication para la gestión de la cuenta de usuario y para el resto de funcionalidades para gestionar los datos en Firestore. Los datos en Firestore se han organizado de la siguiente manera: se crea un documento para cada usuario referenciado con el identificador único del usuario generado por Firebase Autentication tras el registro. Dentro del documento se encuentran las colecciones de listas de la compra, artículos, recetas e invitados. Para cada funcionalidad se han implementado sus respectivos casos de uso que conectan con los repositorios y abstraen a los ViewModels de posibles cambios en ellos.
 
-\begin{itemize}
-    \item \textbf{Lista}: contiene un conjunto de productos, su nombre y estado.
-    \item \textbf{Producto}: asociado a una lista, con nombre, cantidad y supermercado.
-    \item \textbf{Receta}: incluye nombre, pasos de elaboración, ingredientes y número de comensales.
-    \item \textbf{Ingrediente}: definido por nombre y cantidad relativa a los comensales.
-    \item \textbf{Invitado}: con nombre, preferencias alimentarias, intolerancias y registro de comidas anteriores.
-\end{itemize}
+Se han generado los siguientes diagramas UML de caso de uso para entender los casos de usos que utilizan los ViewModels y permiten el refresco de la vista para cada funcionalidad: gestión de cuenta de usuario Figura~\ref{fig:uml_user}, gestión de listas de la compra y artículos Figura~\ref{fig:uml_shopping}, gestión de recetas Figura~\ref{fig:uml_recipe} y gestión de invitados Figura~\ref{fig:uml_guest}.
 
-Este modelo facilita la integración de funcionalidades como el cálculo de ingredientes según el número de comensales, la generación de listas automáticas a partir de recetas y la personalización de menús para invitados con restricciones.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./img/description/uml_usuario.png}
+\caption{Diagrama UML de casos de uso de gestión de cuenta de usuario}
+\label{fig:uml_user}
+\end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./img/description/uml_listas.png}
+\caption{Diagrama UML de casos de uso de gestión de listas de la compra}
+\label{fig:uml_shopping}
+\end{figure}
 
-Esta implementación modular y centrada en buenas prácticas garantiza que Pinche pueda mantenerse y escalarse en el tiempo, facilitando la extensi\'on de funcionalidades futuras.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./img/description/uml_recetas.png}
+\caption{Diagrama UML de casos de uso de gestión de recetas}
+\label{fig:uml_recipe}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./img/description/uml_invitados.png}
+\caption{Diagrama UML de casos de uso de gestión de invitados}
+\label{fig:uml_guest}
+\end{figure}
+
 
 \section{Pruebas}
 \label{sec:pruebas}
 
-El asegurar la calidad en el desarrollo de la aplicación Pinche se ha abordado mediante una estrategia de pruebas estructurada que cubre distintos niveles de validación del sistema: pruebas unitarias y de interfaz. Esta estrategia ha permitido verificar que los componentes funcionan correctamente.
+El asegurar la calidad en el desarrollo de la aplicación Pinche se ha abordado mediante una estrategia de tests unitarios.
 
 \subsection{Pruebas unitarias}
 
@@ -349,7 +365,3 @@ El Listado~\ref{lst:signinTest} muestra la implementación de un test unitario p
     }
 }
 \end{lstlisting}
-
-\subsection{Pruebas de interfaz (UI)}
-
-Las pruebas de interfaz de usuario comprueban el estado de las vistas que va a visualizar el usuario como hemos explicado en la \autoref{sec:test-tools}.

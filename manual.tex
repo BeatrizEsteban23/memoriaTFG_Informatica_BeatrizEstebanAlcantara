@@ -14,7 +14,7 @@ Una vez que el usuario se instale la aplicación y acceda a ella aparece en la p
 
 \clearpage
 %% registro
-Si el usuario hace clic en registrarse, se mostrará la pantalla de \textbf{registro} Figura~\ref{fig:register}. Para el registro hay ciertos campos que el usuario deberá rellenar obligatoriamente Figura~\ref{fig:register-must}. Si el registro se realiza con éxito el usuario accede a la pantalla principal de la aplicación. Si no, se muestra un error Figura~\ref{fig:register-error}.
+Si el usuario hace clic en registrarse, se mostrará la pantalla de \textbf{registro} Figura~\ref{fig:register-main}. Para el registro hay ciertos campos que el usuario deberá rellenar obligatoriamente Figura~\ref{fig:register-must}. Si el registro se realiza con éxito el usuario accede a la pantalla principal de la aplicación. Si no, se muestra un error Figura~\ref{fig:register-error}.
 
 \begin{figure}[H]
     \centering
@@ -22,7 +22,7 @@ Si el usuario hace clic en registrarse, se mostrará la pantalla de \textbf{regi
     \begin{subfigure}[b]{0.3\textwidth}
       \includegraphics[width=\textwidth]{./img/manual/pinche_register.png}
       \caption{Pantalla de registro de un usuario}
-      \label{fig:register}
+      \label{fig:register-main}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
@@ -43,7 +43,7 @@ Si el usuario hace clic en registrarse, se mostrará la pantalla de \textbf{regi
 
 %% login
 \clearpage
-Si el usuario ya tiene cuenta en la aplicación y accede al \textbf{inicio de sesión} se mostrará la pantalla que se muestra en la Figura~\ref{fig:login}. Ambos campos son obligatorios, Figura~\ref{fig:login-must}. En caso de que el inicio de sesión falle, se muestra el siguiente mensaje de error Figura~\ref{fig:login-error}.
+Si el usuario ya tiene cuenta en la aplicación y accede al \textbf{inicio de sesión} se mostrará la pantalla que se muestra en la Figura~\ref{fig:login-main}. Ambos campos son obligatorios, Figura~\ref{fig:login-must}. En caso de que el inicio de sesión falle, se muestra el siguiente mensaje de error Figura~\ref{fig:login-error}.
 
 \begin{figure}[H]
     \centering
@@ -51,7 +51,7 @@ Si el usuario ya tiene cuenta en la aplicación y accede al \textbf{inicio de se
     \begin{subfigure}[b]{0.3\textwidth}
       \includegraphics[width=\textwidth]{./img/manual/pinche_login.png}
       \caption{Pantalla de inicio de sesión de un usuario}
-      \label{fig:login}
+      \label{fig:login-main}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
@@ -72,7 +72,7 @@ Si el usuario ya tiene cuenta en la aplicación y accede al \textbf{inicio de se
 
 %% reseteo de contraseña
 \clearpage
-En el caso de que un usuario al iniciar sesión no recuerde su contraseña, accederá a la pantalla de \textbf{recuperar contraseña} en la que introducirá su correo electrónico donde recibirá un enlace para restablecerla Figura~\ref{fig:reset-password}. Si el envío del correo electrónico ha sido exitoso se le mostrará un mensaje confirmando el envío Figura~\ref{fig:reset-password-succeeds}.
+En el caso de que un usuario al iniciar sesión no recuerde su contraseña, accederá a la pantalla de \textbf{recuperar contraseña} en la que introducirá su correo electrónico donde recibirá un enlace para restablecerla Figura~\ref{fig:reset-password-main}. Si el envío del correo electrónico ha sido exitoso se le mostrará un mensaje confirmando el envío Figura~\ref{fig:reset-password-succeeds}.
 
 \begin{figure}[H]
     \centering
@@ -80,7 +80,7 @@ En el caso de que un usuario al iniciar sesión no recuerde su contraseña, acce
     \begin{subfigure}[b]{0.3\textwidth}
       \includegraphics[width=\textwidth]{./img/manual/sent_reset_password_email.png}
       \caption{Pantalla de recuperar contraseña}
-      \label{fig:reset-password}
+      \label{fig:reset-password-main}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
@@ -106,7 +106,7 @@ Si el registro o el login se han efectuado con éxito, el usuario aparece en la 
 
 %% gestión cuenta de usuario
 \clearpage
-Desde la pantalla principal puede acceder a los \textbf{ajustes}. Donde podrá ver estadísticas sobre su uso en la aplicación y gestionar su cuenta Figura~\ref{fig:settings}. Desde esta pantalla puede cerrar sesión, confirmando la acción con un aviso de lo que supone realizarla Figura~\ref{fig:sign-out}. También puede eliminar su cuenta, confirmando la acción tras un aviso con las consecuencias de esta acción Figura~\ref{fig:delete}.
+Desde la pantalla principal puede acceder a los \textbf{ajustes}. Donde podrá ver estadísticas sobre su uso en la aplicación y gestionar su cuenta Figura~\ref{fig:settings-main}. Desde esta pantalla puede cerrar sesión, confirmando la acción con un aviso de lo que supone realizarla Figura~\ref{fig:sign-out}. También puede eliminar su cuenta, confirmando la acción tras un aviso con las consecuencias de esta acción Figura~\ref{fig:delete}.
 
 \begin{figure}[H]
     \centering
@@ -114,7 +114,7 @@ Desde la pantalla principal puede acceder a los \textbf{ajustes}. Donde podrá v
     \begin{subfigure}[b]{0.3\textwidth}
       \includegraphics[width=\textwidth]{./img/manual/pinche_settings.png}
       \caption{Pantalla de ajustes}
-      \label{fig:settings}
+      \label{fig:settings-main}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
@@ -130,7 +130,7 @@ Desde la pantalla principal puede acceder a los \textbf{ajustes}. Donde podrá v
     \end{subfigure}
 
     \caption{Ajustes}
-    \label{fig:login}
+    \label{fig:settings}
 \end{figure}
 
 %% lista de la compra
@@ -188,6 +188,7 @@ El usuario podrá crear listas de la compra desde la pantalla de crear lista Fig
     \label{fig:create-list}
 \end{figure}
 
+\clearpage
 También podrá acceder al detalle de una lista, si la lista aún no tiene artículos se mostrará vacía Figura~\ref{fig:no-items}. Desde esta pantalla podrá eliminar una lista tras confirmar la acción Figura~\ref{fig:confirm-delete-list} o cambiar el nombre una lista Figura~\ref{fig:change-list-name}.
 
 \begin{figure}[H]
